@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
 require 'pry'
-
 require_relative './course.rb'
 
 class Scraper
@@ -16,12 +15,11 @@ class Scraper
 
 
   def make_courses
-   
     get_courses.each do |course| 
         n_course = Course.new
         n_course.title = course.css("h2").text
         n_course.schedule = course.css(".date").text
-        binding.pry
+        n_course.description = course.css("p").text
     end
   end
   
