@@ -1,0 +1,1 @@
+html = open('http://www.google.com')
